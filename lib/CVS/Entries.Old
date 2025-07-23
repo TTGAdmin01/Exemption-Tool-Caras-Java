@@ -1,0 +1,41 @@
+/nblibraries.properties/1.1.1.1/Wed Oct 20 22:24:42 2021//
+D/CopyLibs////
+D/hamcrest////
+D/junit_4////
+/SparseBitSet-1.2.jar/1.1/Tue Feb  4 04:48:42 2020/-kb/
+/activation-1.1.1.jar/1.1/Tue Feb  4 04:48:42 2020/-kb/
+/commons-cli-1.4.jar/1.1/Sat Oct 13 18:48:40 2018/-kb/
+/commons-codec-1.13.jar/1.1/Wed Oct 23 19:18:50 2019/-kb/
+/commons-collections4-4.4.jar/1.1/Tue Feb  4 04:48:38 2020/-kb/
+/commons-compress-1.19.jar/1.1/Tue Feb  4 04:48:56 2020/-kb/
+/commons-io-2.7.jar/1.1/Sun May 24 23:09:50 2020/-kb/
+/commons-lang3-3.11.jar/1.1/Tue Jul 21 15:08:06 2020/-kb/
+/commons-logging-1.2.jar/1.1/Tue Feb  4 04:48:26 2020/-kb/
+/commons-math3-3.6.1.jar/1.1/Tue Feb  4 04:48:40 2020/-kb/
+/curvesapi-1.06.jar/1.1/Tue Feb  4 04:48:50 2020/-kb/
+/httpclient5-5.0.1.jar/1.1/Tue Jun  9 02:32:06 2020/-kb/
+/httpclient5-fluent-5.0.1.jar/1.1/Tue Jun  9 02:33:32 2020/-kb/
+/httpcore5-5.0.1.jar/1.1/Fri Jun  5 18:27:12 2020/-kb/
+/jackson-annotations-2.11.2.jar/1.1/Wed Aug  5 19:59:32 2020/-kb/
+/jackson-core-2.11.2.jar/1.1/Wed Aug  5 19:59:32 2020/-kb/
+/jackson-databind-2.11.2.jar/1.1/Wed Aug  5 19:59:32 2020/-kb/
+/jaxb-api-2.3.1.jar/1.1/Tue Feb  4 04:48:40 2020/-kb/
+/jaxb-core-2.3.0.1.jar/1.1/Tue Feb  4 04:48:42 2020/-kb/
+/jaxb-impl-2.3.2.jar/1.1/Tue Feb  4 04:48:42 2020/-kb/
+/jna-5.2.0.jar/1.1/Wed Mar  6 21:46:14 2019/-kb/
+/neethi-3.1.1.jar/1.1/Wed Mar 18 16:05:12 2020/-kb/
+/poi-4.1.2.jar/1.1/Tue Feb 11 04:37:24 2020/-kb/
+/poi-excelant-4.1.2.jar/1.1/Tue Feb 11 04:37:24 2020/-kb/
+/poi-ooxml-4.1.2.jar/1.1/Tue Feb 11 04:37:24 2020/-kb/
+/poi-ooxml-schemas-4.1.2.jar/1.1/Tue Feb 11 04:37:26 2020/-kb/
+/poi-scratchpad-4.1.2.jar/1.1/Tue Feb 11 04:37:24 2020/-kb/
+/reactive-streams-1.0.3.jar/1.1/Wed Mar 18 16:07:20 2020/-kb/
+/slf4j-api-1.7.25.jar/1.1/Thu Oct  4 18:34:00 2018/-kb/
+/slf4j-api-1.7.30.jar/1.1/Fri May  1 21:38:20 2020/-kb/
+/stax2-api-4.2.1.jar/1.1/Wed Jul 22 15:46:42 2020/-kb/
+/wsdl4j-1.6.3.jar/1.1/Wed Mar 18 16:00:02 2020/-kb/
+/xmlbeans-3.1.0.jar/1.1/Tue Feb  4 04:48:54 2020/-kb/
+/log4j-1.2-api-2.17.0.jar/1.1/Sat Dec 18 01:52:16 2021/-kb/
+/log4j-api-2.17.0.jar/1.1/Sat Dec 18 01:51:14 2021/-kb/
+/log4j-core-2.17.0.jar/1.1/Sat Dec 18 01:51:53 2021/-kb/
+/wesco_certificate_upload.jar/1.10/Mon Jan  9 22:49:37 2023/-kb/
