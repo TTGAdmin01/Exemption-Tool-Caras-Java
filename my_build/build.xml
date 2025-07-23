@@ -1,0 +1,127 @@
+
+<project name="TTGCertificateUpload" default="dev" basedir="..">
+	<description>
+        Build file for TTG Certificate Upload
+    </description>
+
+	<property environment="env." />
+	<property name="env.CLASSPATH" value="" />
+	<fail message="Unset $CLASSPATH / %CLASSPATH% before running Ant!">
+		<condition>
+			<not>
+				<equals arg1="${env.CLASSPATH}" arg2="" />
+			</not>
+		</condition>
+	</fail>
+
+	<!-- set global properties for this build -->
+	<property name="src" location="src" />
+	<property name="utest" location="test" />
+	<property name="build" location="my_build" />
+	<property name="packaging" location="packaging" />
+	<property name="lib" location="lib" />
+	<property name="doc" location="doc" />
+	<property name="scripts" location="scripts" />
+
+	<target name="clean">
+		<delete dir="${packaging}/" />
+	</target>
+
+	<target name="init">
+		<!-- increment the build number -->
+		<propertyfile file="${build}/build.properties" comment="Build version info">
+			<entry key="buildDate" type="date" value="TODAY" pattern="EEE MM/dd/yyyy" />
+			<entry key="buildMajorMinorRelease" type="string" default="1.1.0" />
+			<entry key="buildNum" default="0" type="int" operation="+" value="1" />
+		</propertyfile>
+		<loadproperties srcFile="${build}/build.properties" />
+		<property name="buildversion" value="${buildMajorMinorRelease}.${buildNum}" />
+		<property name="builddate" value="${buildDate}" />
+		<property name="builddir" value="C:/TTGCertificateUploadBuilds/${buildversion}" />
+		<echo message="Build ${buildversion}  ${builddate}" />
+
+
+		<!-- Create build directory -->
+		<mkdir dir="${builddir}" />
+		<mkdir dir="${builddir}/lib" />
+
+	</target>
+
+
+	<target name="dev" depends="init" description="build project">
+		<!-- Clean out packaging directory -->
+		<delete dir="${packaging}/" />
+
+		<!-- Rebuild Packaging directory structure -->
+		<mkdir dir="${packaging}" />
+		<mkdir dir="${packaging}/META-INF" />
+
+
+
+		<!-- Echo the build version to packaging -->
+		<echo message="${buildversion}" file="${packaging}/buildnumber.txt" />
+ 
+
+		<!-- Compile the java code from ${src} into ${packaging} -->
+		<javac destdir="${packaging}" debug="true" >
+			<src path="${src}" />
+			<src path="${utest}" />
+			<classpath>
+				<pathelement path="${classpath}" />
+				<fileset dir="lib">
+					<include name="**/*.jar" />
+				</fileset>
+				<pathelement location="${packaging}" />
+			</classpath>
+		</javac>
+
+
+		<!-- Build the jar file in lib directory -->
+		<jar jarfile="${lib}/wesco_certificate_upload.jar" basedir="${packaging}" />
+
+		<!-- Copy jar files to build/lib directory -->
+		<copy todir="${builddir}/lib">
+			<fileset dir="${lib}"  >
+				<include name="**/*.jar" />
+				<include name="**/*.txt" />
+				<exclude name="**/CopyLibs/*"/>
+				<exclude name="**/hamcrest/*"/>
+				<exclude name="**/junit_4/*"/>
+			</fileset>
+			
+		</copy>
+		
+
+
+		<!-- Copy script files to scripts directory -->
+		<copy file="${scripts}/TTGCertificateUpload.bat" todir="${builddir}/scripts" />
+		<copy file="${scripts}/TTGCustomerCertificateLink.bat" todir="${builddir}/scripts" />
+		<copy file="${scripts}/TTGCertificateStateDelete.bat" todir="${builddir}/scripts" />
+
+		<!-- Copy properties files to scripts directory -->
+		<copy file="${build}/TTGCertificateUpload.properties" todir="${builddir}/scripts" />
+		<copy file="${build}/TTGCertificateUpload.mcwane.properties" todir="${builddir}/scripts" />
+		<copy file="${build}/TTGCertificateUpload.ofs.properties" todir="${builddir}/scripts" />
+		<copy file="${build}/TTGCertificateUpload.johnCrane.properties" todir="${builddir}/scripts" />
+		<copy file="${build}/TTGCertificateUpload.thrive.properties" todir="${builddir}/scripts" />
+		<copy file="${build}/log4j2.xml" todir="${builddir}/lib" />
+
+	</target>
+
+
+
+
+	<target name="release" depends="dev" description="Finalize release">
+
+		<!-- Copy documents for release -->
+		<!--copy file="${doc}/Wesco Certificate Upload.docx" todir="${builddir}" /-->
+		<!-- Zip release file -->
+		<zip destfile="${builddir}/TTGCertificateUpload_${buildversion}.zip" basedir="${builddir}" />
+		<move file="${builddir}" tofile="${builddir}_release" />
+
+
+		<echo message="Build ${builddir}_release is complete" />
+	</target>
+
+</project>
+

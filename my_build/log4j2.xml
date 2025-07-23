@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+	<Appenders>
+		<RollingFile name="RollingFileAppender" >
+			<FileName>../logs/certificate_upload.log</FileName>
+			<FilePattern>../logs/certificate_upload-%d{yyyy-MM-dd}.log.gz</FilePattern>
+			<PatternLayout>
+				<pattern>&lt;%d&gt;&lt;%level&gt;&lt;%F:%L&gt;%msg%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"  />
+			</Policies>
+		</RollingFile>
+
+		<Console name="console" target="SYSTEM_OUT">
+				<pattern>&lt;%d&gt;&lt;%level&gt;&lt;%F:%L&gt;%msg%n</pattern>
+		</Console>
+	</Appenders>
+	
+	<Loggers>
+		<Root level="info" >
+			<AppenderRef ref="RollingFileAppender" />
+			<!--AppenderRef ref="console" /-->
+		</Root>
+	</Loggers>
+</Configuration>
